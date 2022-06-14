@@ -1,0 +1,151 @@
+@charset "utf-8";
+
+header {
+  display: flex;
+  background-color: blueviolet;
+  width: 100%;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+header h1 {
+  height: 50px;
+  width: 70px;
+  border: solid white 1px;
+  text-align: center;
+  margin-left: 5px;
+}
+
+header ul {
+  display: flex;
+  gap: 50px;
+  margin-right: 50px;
+  font-size: 2rem;
+}
+
+#flop {
+  display: none;
+}
+
+#check {
+  display: none;
+}
+#check:checked + label span:nth-child(1) {
+  transform: rotate(-45deg);
+  top: 8px;
+  position: relative;
+  transition: 0.25s ease-in-out;
+}
+#check:checked + label span:nth-child(2) {
+  opacity: 0;
+}
+
+#check:checked + label span:nth-child(3) {
+  transform: rotate(45deg);
+  transition: 0.25s ease-in-out;
+  position: relative;
+  top: -8px;
+}
+
+#icone {
+  cursor: pointer;
+  padding: 20px;
+  position: absolute;
+  z-index: 1;
+  position: fixed;
+  width: 33px;
+}
+.barra {
+  background-color: blueviolet;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  transition: all 0.2s ease-in-out;
+  top: -100%;
+  position: fixed;
+  padding-top: 40px;
+}
+
+label span {
+  display: block;
+  width: 30px;
+  height: 5px;
+  border-radius: 30px;
+  background: #ffffff;
+  transition: 0.25s ease-in-out;
+}
+
+label span:nth-child(1) {
+  margin-bottom: 2.5px;
+}
+
+label span:nth-child(2) {
+  margin-bottom: 3.5px;
+}
+
+label {
+  position: absolute;
+  top: 10px;
+}
+
+.barra1 {
+  width: 100%;
+  height: 100vh;
+  background-color: blueviolet;
+}
+.link {
+  background-color: rgb(170, 89, 245);
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+  transition: all 0.2s linear;
+  color: #fff;
+  border-bottom: 2px solid rgb(71, 20, 119);
+  font-weight: bold;
+}
+
+#check:checked ~ .barra {
+  transform: translateY(
+    100%
+  ); /* para a barra rodar nas laterias trocar o translateY por
+	translateX e mudar a .barra top por left*/
+}
+
+#conteiner-principal {
+  height: 900px;
+}
+
+footer {
+  width: 100%;
+  height: 80px;
+  background-color: blueviolet;
+  display: flex;
+}
+
+@media screen and (max-width: 980px) {
+  #flop {
+    display: block;
+    float: left;
+    margin-top: 10px;
+  }
+
+  .nav-main {
+    display: none;
+  }
+
+  #conteiner-principal {
+    margin-top: 90px;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+  }
+
+  #logo {
+    z-index: 9999;
+    margin-right: 15px;
+  }
+}
